@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11160f">
+<meta name="description" content="GreenBoy — Roblox APIs, Discord tools, and a few things I create. Find my projects and social links.">
+<title>GreenBoy · VOIDYX</title>
+<style>
+:root{color-scheme:dark;--text:#f2f4ed;--muted:#b5bcae;--accent:#bed49d;--line:rgba(229,241,210,.14)}
+*{box-sizing:border-box}html{min-height:100%;background:#10140f}body{margin:0;min-height:100svh;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;color:var(--text);display:grid;place-items:center;padding:76px 22px 56px}
+.background{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;filter:saturate(.55) brightness(.6)}
+.shade{position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(8,12,7,.2),rgba(7,11,6,.5)),radial-gradient(ellipse at center,transparent,rgba(0,0,0,.35))}
+.grain{pointer-events:none;position:fixed;inset:0;z-index:3;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.6' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.sound{position:fixed;top:24px;left:24px;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:13px;background:rgba(17,23,14,.38);backdrop-filter:blur(15px);color:var(--accent);transition:background .2s}
+.sound:hover{background:rgba(190,212,157,.13)}.sound svg{width:21px;height:21px}.sound .waves{display:none}.sound[aria-pressed="true"] .waves{display:block}.sound[aria-pressed="true"] .slash{display:none}
+main{width:min(100%,570px);animation:arrive .9s ease both}
+.eyebrow{display:flex;justify-content:space-between;align-items:center;margin:0 4px 14px;font-size:10px;letter-spacing:.18em;color:#d1d9c7;text-transform:uppercase}
+.eyebrow .alias{color:#abb69f;letter-spacing:.12em}
+.card{position:relative;overflow:hidden;padding:35px 32px 25px;border:1px solid rgba(222,236,203,.18);border-radius:23px;background:linear-gradient(125deg,rgba(45,54,36,.46),rgba(15,21,13,.42));box-shadow:0 20px 80px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.profile{display:flex;align-items:center;gap:20px}.avatar{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid rgba(213,231,187,.55);box-shadow:0 0 25px rgba(172,208,127,.1);background:#1c2817}
+h1{margin:0;font-size:31px;letter-spacing:-1.6px;font-weight:650;line-height:1.2;text-shadow:0 0 25px rgba(193,220,161,.22)}
+.handle{margin:8px 0 0;color:var(--muted);font-size:11px;letter-spacing:.04em}
+.bio{font-size:12px;line-height:1.9;margin:24px 0 0;color:#d4dacd;max-width:440px}.bio em{font-style:normal;color:var(--accent)}
+.socials{display:flex;align-items:center;justify-content:center;gap:13px;padding:25px 0 24px}
+.social{width:46px;height:46px;display:grid;place-items:center;border:1px solid transparent;border-radius:13px;color:#d0dfbb;transition:transform .2s,color .2s,background .2s,border-color .2s}.social svg{height:25px;width:25px;fill:currentColor}.social:hover{transform:translateY(-3px);color:#efffd8;background:rgba(207,231,176,.08);border-color:var(--line)}
+.project{display:flex;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:19px;font-size:11px;color:#c4ceb9;line-height:1.6}.project span:first-child{display:flex;align-items:center;gap:8px}.project svg{width:16px;height:16px;fill:none;stroke:var(--accent);stroke-width:1.5}.project .arrow{color:var(--accent);font-size:18px;transition:transform .2s}.project:hover .arrow{transform:translate(2px,-2px)}.project:hover{color:white}
+.discord{margin-top:12px;display:flex;align-items:center;gap:13px;padding:18px 20px;border:1px solid var(--line);border-radius:17px;background:rgba(21,28,17,.42);backdrop-filter:blur(20px)}
+.discord img{width:43px;height:43px;border-radius:50%;object-fit:cover;background:#1c2817}.discord-name{margin:0 0 6px;font-size:12px;color:#e0e7d8}.discord-caption{margin:0;font-size:10px;color:var(--muted)}.discord .copy{margin-left:auto;min-width:39px;height:38px;padding:8px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted)}.copy:hover{color:var(--accent);background:rgba(212,236,181,.07);border-color:var(--line)}.copy svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}
+footer{text-align:center;margin-top:20px;color:#a6b19b;font-size:9px;letter-spacing:.12em}footer a:hover{color:#fff}.toast{min-height:16px;text-align:center;font-size:10px;color:var(--accent);margin-top:12px}
+@keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){body{padding:70px 18px 34px}.card{padding:28px 23px 22px;border-radius:20px}.profile{gap:16px}.avatar{width:65px;height:65px}h1{font-size:28px}.bio{font-size:11px}.socials{gap:7px;padding:22px 0}.social{width:43px;height:43px}.discord{padding:16px}.discord-name{font-size:11px}.eyebrow{font-size:9px}.sound{left:18px;top:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.background{display:none}}
+</style>
+</head>
+<body>
+<video class="background" autoplay muted loop playsinline preload="metadata" aria-hidden="true" id="background-video">
+<source src="https://r2.guns.lol/d4f34784-6740-48b7-b0c7-78cf5b39a8d1.mp4" type="video/mp4">
+</video>
+<div class="shade" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<button class="sound" id="sound" type="button" aria-label="Unmute background video" aria-pressed="false" title="Toggle background sound">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="slash" d="m16 9 5 6m0-6-5 6"/></svg>
+</button>
+<main>
+<div class="eyebrow"><span>Personal space</span><span class="alias">aka VOIDYX</span></div>
+<section class="card" aria-labelledby="name">
+<div class="profile">
+<img class="avatar" src="https://cdn.discordapp.com/avatars/1127873347947069502/3407626ab5e89c3346b934cf17eb1910.webp?size=512" alt="GreenBoy's avatar" width="80" height="80">
+<div><h1 id="name">GreenBoy<span style="color:var(--accent)">.</span></h1><p class="handle">@ItssGreenBoy</p></div>
+</div>
+<p class="bio">I build <em>Roblox APIs &amp; Discord tools</em>.<br>Also creating things with VOIDYX. Find me below.</p>
+<nav class="socials" aria-label="My links">
+<a class="social" href="https://discord.com/users/1127873347947069502" aria-label="Discord profile" title="Discord" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4a20 20 0 0 0-4.8-1.5l-.6 1.2a18 18 0 0 0-5.8 0l-.6-1.2a20 20 0 0 0-4.8 1.5C.7 8.9-.1 13.3.3 17.6a20 20 0 0 0 5.9 3l1.2-2a12 12 0 0 1-1.9-.9l.5-.4a14 14 0 0 0 12 0l.5.4-1.9.9 1.2 2a20 20 0 0 0 5.9-3c.5-5-1-9.3-3.4-13.2ZM8 14.9c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm8 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg></a>
+<a class="social" href="https://www.youtube.com/@VoidyxGroup" aria-label="VOIDYX on YouTube" title="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a3 3 0 0 0-2-2c-1.8-.5-9-.5-9-.5s-7.2 0-9 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 10 3 3 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-10ZM9.6 15.4V8.6l6.2 3.4Z"/></svg></a>
+<a class="social" href="https://www.roblox.com/users/3889801982/profile" aria-label="GreenBoy on Roblox" title="Roblox" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="m5.3.3 18.4 5-5 18.4-18.4-5ZM9.4 7.5l7.1 1.9-1.9 7.1-7.1-1.9Z"/></svg></a>
+<a class="social" href="https://x.com/GreenBoy_Best" aria-label="GreenBoy on X" title="X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22H17l-4.8-7.3L5.8 22H2.6l8.2-9.4L3.4 2h6.3l4.3 6.7ZM17.9 20h1.7L8.7 3.9H6.9Z"/></svg></a>
+<a class="social" href="https://github.com/ItssGreenBoy" aria-label="GreenBoy on GitHub" title="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.5v-2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.8 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .8Z"/></svg></a>
+</nav>
+<a class="project" href="https://github.com/ItssGreenBoy/Roblox-LookUp-API-BDFD-" target="_blank" rel="noopener noreferrer"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-16-2 20"/></svg>Roblox LookUp API · BDFD</span><span class="arrow" aria-hidden="true">↗</span></a>
+</section>
+<section class="discord" aria-label="Discord contact">
+<img src="https://cdn.discordapp.com/avatars/1127873347947069502/3407626ab5e89c3346b934cf17eb1910.webp?size=128" alt="" width="43" height="43">
+<div><p class="discord-name">greenboy_the_best</p><p class="discord-caption">Discord · say hello</p></div>
+<button class="copy" id="copy" type="button" aria-label="Copy Discord username" title="Copy username"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg></button>
+</section>
+<footer>GREENBOY / VOIDYX · <span id="year">2026</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</main>
+<script>
+const video=document.getElementById('background-video');
+const sound=document.getElementById('sound');
+const toast=document.getElementById('toast');
+let toastTimeout;
+sound.addEventListener('click',()=>{
+ video.muted=!video.muted;
+ sound.setAttribute('aria-pressed',String(!video.muted));
+ sound.setAttribute('aria-label',video.muted?'Unmute background video':'Mute background video');
+});
+document.getElementById('copy').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText('greenboy_the_best');toast.textContent='Discord username copied.'}
+ catch{toast.textContent='Discord: greenboy_the_best'}
+ clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.textContent='',3500);
+});
+document.getElementById('year').textContent=new Date().getFullYear();
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+function motion(){if(reducedMotion.matches)video.pause();else video.play().catch(()=>{});}
+reducedMotion.addEventListener('change',motion);motion();
+document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else motion()});
+</script>
+</body>
+</html>
