@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#11160f">
 <meta name="description" content="GreenBoy — Roblox APIs, Discord tools, and a few things I create. Find my projects and social links.">
-<title>GreenBoy · VOIDYX</title>
+<title>GreenBoy</title>
 <style>
 :root{color-scheme:dark;--text:#f2f4ed;--muted:#b5bcae;--accent:#bed49d;--line:rgba(229,241,210,.14)}
 *{box-sizing:border-box}html{min-height:100%;background:#10140f}body{margin:0;min-height:100svh;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;color:var(--text);display:grid;place-items:center;padding:76px 22px 56px}
@@ -29,6 +29,9 @@ h1{margin:0;font-size:31px;letter-spacing:-1.6px;font-weight:650;line-height:1.2
 .discord{margin-top:12px;display:flex;align-items:center;gap:13px;padding:18px 20px;border:1px solid var(--line);border-radius:17px;background:rgba(21,28,17,.42);backdrop-filter:blur(20px)}
 .discord img{width:43px;height:43px;border-radius:50%;object-fit:cover;background:#1c2817}.discord-name{margin:0 0 6px;font-size:12px;color:#e0e7d8}.discord-caption{margin:0;font-size:10px;color:var(--muted)}.discord .copy{margin-left:auto;min-width:39px;height:38px;padding:8px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--muted)}.copy:hover{color:var(--accent);background:rgba(212,236,181,.07);border-color:var(--line)}.copy svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}
 footer{text-align:center;margin-top:20px;color:#a6b19b;font-size:9px;letter-spacing:.12em}footer a:hover{color:#fff}.toast{min-height:16px;text-align:center;font-size:10px;color:var(--accent);margin-top:12px}
+.sparkle-name{position:relative;display:inline-block}.sparkles{position:absolute;inset:-13px -15px;pointer-events:none}.sparkles i{position:absolute;width:5px;height:5px;background:#e5f6cc;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:0;animation:twinkle 4.8s ease-in-out infinite}.sparkles i:nth-child(1){left:9%;top:13%;animation-delay:-.8s}.sparkles i:nth-child(2){left:38%;top:3%;width:7px;height:7px;animation-delay:-3s}.sparkles i:nth-child(3){right:7%;top:29%;animation-delay:-1.9s}.sparkles i:nth-child(4){left:20%;bottom:13%;width:4px;height:4px;animation-delay:-4s}.sparkles i:nth-child(5){right:28%;bottom:3%;animation-delay:-2.5s}.sparkles i:nth-child(6){left:0;top:54%;width:4px;height:4px;animation-delay:-.2s}
+@keyframes twinkle{0%,16%,62%,100%{opacity:0;transform:translateY(3px) scale(.45) rotate(0)}34%{opacity:.85;transform:translateY(0) scale(1) rotate(35deg)}48%{opacity:.3;transform:translateY(-3px) scale(.7) rotate(60deg)}}
+.projects summary{list-style:none;cursor:pointer;border-radius:0;background:transparent}.projects summary::-webkit-details-marker{display:none}.projects summary::marker{content:""}.project-count{font-size:9px;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--muted);margin-left:4px}.chevron{font-size:19px;color:var(--accent);transition:transform .2s}.projects[open] .chevron{transform:rotate(180deg)}.project-list{padding-top:13px;display:grid;gap:7px}.projects[open] .project-list{animation:arrive .25s ease both}.project-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 12px;background:rgba(196,222,167,.035);border:1px solid var(--line);border-radius:10px;transition:background .2s}.project-item:hover{background:rgba(196,222,167,.09)}.project-item strong{display:block;font-size:11px;font-weight:500;color:var(--text);line-height:1.6}.project-item small{display:block;font-size:10px;color:var(--muted);line-height:1.7;margin-top:3px}.project-item>span:last-child{color:var(--accent)}@media(prefers-reduced-motion:reduce){.sparkles{display:none}}
 @keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:480px){body{padding:70px 18px 34px}.card{padding:28px 23px 22px;border-radius:20px}.profile{gap:16px}.avatar{width:65px;height:65px}h1{font-size:28px}.bio{font-size:11px}.socials{gap:7px;padding:22px 0}.social{width:43px;height:43px}.discord{padding:16px}.discord-name{font-size:11px}.eyebrow{font-size:9px}.sound{left:18px;top:18px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.background{display:none}}
@@ -43,28 +46,34 @@ footer{text-align:center;margin-top:20px;color:#a6b19b;font-size:9px;letter-spac
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path class="waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="slash" d="m16 9 5 6m0-6-5 6"/></svg>
 </button>
 <main>
-<div class="eyebrow"><span>Personal space</span><span class="alias">aka VOIDYX</span></div>
+<div class="eyebrow"><span>Personal space</span><span class="alias">links &amp; projects</span></div>
 <section class="card" aria-labelledby="name">
 <div class="profile">
 <img class="avatar" src="https://cdn.discordapp.com/avatars/1127873347947069502/3407626ab5e89c3346b934cf17eb1910.webp?size=512" alt="GreenBoy's avatar" width="80" height="80">
-<div><h1 id="name">GreenBoy<span style="color:var(--accent)">.</span></h1><p class="handle">@ItssGreenBoy</p></div>
+<div><h1 id="name"><span class="sparkle-name">GreenBoy<span style="color:var(--accent)">.</span><span class="sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></span></h1><p class="handle">@ItssGreenBoy</p></div>
 </div>
-<p class="bio">I build <em>Roblox APIs &amp; Discord tools</em>.<br>Also creating things with VOIDYX. Find me below.</p>
+<p class="bio">I build <em>Roblox APIs &amp; Discord tools</em>.<br>Small projects, useful tools. Find me below.</p>
 <nav class="socials" aria-label="My links">
 <a class="social" href="https://discord.com/users/1127873347947069502" aria-label="Discord profile" title="Discord" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4a20 20 0 0 0-4.8-1.5l-.6 1.2a18 18 0 0 0-5.8 0l-.6-1.2a20 20 0 0 0-4.8 1.5C.7 8.9-.1 13.3.3 17.6a20 20 0 0 0 5.9 3l1.2-2a12 12 0 0 1-1.9-.9l.5-.4a14 14 0 0 0 12 0l.5.4-1.9.9 1.2 2a20 20 0 0 0 5.9-3c.5-5-1-9.3-3.4-13.2ZM8 14.9c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm8 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/></svg></a>
-<a class="social" href="https://www.youtube.com/@VoidyxGroup" aria-label="VOIDYX on YouTube" title="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a3 3 0 0 0-2-2c-1.8-.5-9-.5-9-.5s-7.2 0-9 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 10 3 3 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-10ZM9.6 15.4V8.6l6.2 3.4Z"/></svg></a>
+<a class="social" href="https://www.youtube.com/@VoidyxGroup" aria-label="GreenBoy on YouTube" title="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7a3 3 0 0 0-2-2c-1.8-.5-9-.5-9-.5s-7.2 0-9 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 10 3 3 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-10ZM9.6 15.4V8.6l6.2 3.4Z"/></svg></a>
 <a class="social" href="https://www.roblox.com/users/3889801982/profile" aria-label="GreenBoy on Roblox" title="Roblox" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="m5.3.3 18.4 5-5 18.4-18.4-5ZM9.4 7.5l7.1 1.9-1.9 7.1-7.1-1.9Z"/></svg></a>
 <a class="social" href="https://x.com/GreenBoy_Best" aria-label="GreenBoy on X" title="X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22H17l-4.8-7.3L5.8 22H2.6l8.2-9.4L3.4 2h6.3l4.3 6.7ZM17.9 20h1.7L8.7 3.9H6.9Z"/></svg></a>
 <a class="social" href="https://github.com/ItssGreenBoy" aria-label="GreenBoy on GitHub" title="GitHub" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.5v-2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.8 0c2.2-1.5 3.1-1.2 3.1-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .8Z"/></svg></a>
 </nav>
-<a class="project" href="https://github.com/ItssGreenBoy/Roblox-LookUp-API-BDFD-" target="_blank" rel="noopener noreferrer"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-16-2 20"/></svg>Roblox LookUp API · BDFD</span><span class="arrow" aria-hidden="true">↗</span></a>
+<details class="projects">
+<summary class="project"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-16-2 20"/></svg>My projects <span class="project-count">02</span></span><span class="chevron" aria-hidden="true">⌄</span></summary>
+<div class="project-list">
+<a class="project-item" href="https://github.com/ItssGreenBoy/Roblox-LookUp-API-BDFD-" target="_blank" rel="noopener noreferrer"><span><strong>Roblox LookUp API</strong><small>Roblox lookup tools for BDFD bots.</small></span><span aria-hidden="true">↗</span></a>
+<a class="project-item" href="https://github.com/ItssGreenBoy/Welcome-API-RENDER-Donation-Bay-" target="_blank" rel="noopener noreferrer"><span><strong>Donation Bay Welcome API</strong><small>Welcome images for the Donation Bay community.</small></span><span aria-hidden="true">↗</span></a>
+</div>
+</details>
 </section>
 <section class="discord" aria-label="Discord contact">
 <img src="https://cdn.discordapp.com/avatars/1127873347947069502/3407626ab5e89c3346b934cf17eb1910.webp?size=128" alt="" width="43" height="43">
 <div><p class="discord-name">greenboy_the_best</p><p class="discord-caption">Discord · say hello</p></div>
 <button class="copy" id="copy" type="button" aria-label="Copy Discord username" title="Copy username"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg></button>
 </section>
-<footer>GREENBOY / VOIDYX · <span id="year">2026</span></footer>
+<footer>GREENBOY · <span id="year">2026</span></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </main>
 <script>
